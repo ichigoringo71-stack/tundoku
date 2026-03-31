@@ -13,6 +13,8 @@ function App() {
   const [editingReviewId, setEditingReviewId]=useState(null)
   const [tempReview, setTempReview]=useState('')
 
+  const [filterStatus, setFilterStatus]=useState('all')
+
   //1. python APIからデータを取得する関数
   const fetchBooks=async()=>{
     try{
@@ -77,6 +79,11 @@ function App() {
     }
   }
 
+  const filteredBooks=books.filter(book=>{
+    if(filterStatus==='all') return true;
+    return book.status===filterStatus;
+  });
+
   //2. 画面が開いた瞬間に実行する
   useEffect(()=>{
     fetchBooks()
@@ -106,7 +113,7 @@ function App() {
            className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400 outline-none"
           />
           <textarea
-           placeholfer="読みたい理由"
+           placeholder="読みたい理由"
            value={reason}
            onChange={(e)=>setReason(e.target.value)}
            className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400 outline-none"
@@ -118,22 +125,61 @@ function App() {
             積読リストに入れる
           </button>
         </form>
-        {/* ---リスト表示--- */ }
-        {books.length===0?(
-          <p className="text-center text-gray-500">まだ本が登録されていません</p>
-        ):(
-          books.map((book)=>(
-            <div key={book.id} className="bg-white p-4 rounded-lg shadow flex justify-between items-center">
-              <div>
-                <h2 className="text-xl font-semibold text-gray-800">{book.title}</h2>
-                <p className="text-sm text-gray-600">理由:{book.reason}</p>
-                <span className={`text-xl px-2 py-1 rounded ${
-                  book.status==='completed' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
-                }`}>
-                  {book.status}
-                </span>
-                
+        {/* ---タブ切り替えボタン--- */}
+        <div className="flex bg-white p-1 rounded-xl shadow-sm md-6 border-gray-200">
+          {[
+            { id: 'all', label: '全て'},
+            { id: 'unread', label: '未読'},
+            { id: 'reading', label: '進行中'},
+            { id: 'completed', label: '読了'},
+          ].map((tab)=>(
+            <button
+             key={tab.id}
+             onClick={()=>setFilterStatus(tab.id)}
+             className={`flex-1 py-2 text-sm font-medium rounded-lg transition ${
+              filterStatus===tab.id
+              ? 'bg-blue-500 text-white shadow'
+              : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+             }`}
+            >
+             {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* ---フィルタリングされたリスト表示--- */}
+        <div className="space-y-4">
+          {filteredBooks.length===0 ? (
+            <div className="text-center py-12 bg-white rounded-2xl border-2 border-bashed border-gray-200">
+              <p className="text-gray-400">該当する本がありません</p>
+            </div>
+          ):(
+            filteredBooks.map((book)=>(
+              <div key={book.id} className="bg-white p-4 rounded-lg shadow space-y-4">
+               <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-800">{book.title}</h2>
+                  <p className="text-sm text-gray-600">理由: {book.reason}</p>
+                  <div classNmae="mt-2">
+                    <span className={`text-xs px-2 py-1 rounded ${
+                      book.status==='completed' ? 'bg-green-100 text-green-700'
+                      : book.status==='reading' ? 'bg-yellow-100 text-yellow-700' : 'bg-blue-100 text-blue-700'
+                    }`}>
+                      {book.status==='completed' ? '読了' : book.status==='reading' ? '進行中' : '未読'}
+                    </span>
+                  </div>
+               </div>
+
+               {/* ---削除ボタン--- */}
+               <button
+                 onClick={()=>handleDelete(book.id)}
+                 className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors rounded-full"
+                 title="削除"
+               >
+                 <Trash2 size={20} />
+               </button>
               </div>
+
               {/* ---ステータス切り替えボタン--- */}
               <div className="flex gap-2">
                 <button
@@ -190,22 +236,16 @@ function App() {
                       編集
                     </button>
                   </div>
-                 )}
-                </div> 
-              )}
-              {/* ---削除ボタン--- */}
-              <button
-               onClick={()=>handleDelete(book.id)}
-               className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors rounded-full"
-               title="削除"
-              >
-                <Trash2 size={20} />
-              </button>
-            </div>
-          ))
-        )}
-      </main>
+                )}
+              </div>
+            )}
+          </div>
+        ))
+      )}
     </div>
+  </main>
+</div>
   )
 }
+
 export default App

@@ -1,0 +1,61 @@
+Date : 2026-03-31 15:54:49
+Directory : /Users/sonodamizuki/Desktop/github/tundoku
+Total : 22 files,  3846 codes, 53 comments, 94 blanks, all 3993 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          2 |      3,285 |          0 |          2 |      3,287 |
+| JavaScript JSX |          2 |        177 |         26 |         21 |        224 |
+| PostCSS        |          2 |        159 |          0 |         27 |        186 |
+| Python         |          6 |        126 |         25 |         29 |        180 |
+| JavaScript     |          4 |         50 |          2 |          4 |         56 |
+| XML            |          4 |         27 |          0 |          2 |         29 |
+| HTML           |          1 |         13 |          0 |          1 |         14 |
+| Markdown       |          1 |          9 |          0 |          8 |         17 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                        |         22 |      3,846 |         53 |         94 |      3,993 |
+| . (Files)                                                                |          3 |         59 |         12 |         14 |         85 |
+| backend                                                                  |          3 |         67 |         13 |         15 |         95 |
+| frontend                                                                 |         16 |      3,720 |         28 |         65 |      3,813 |
+| frontend (Files)                                                         |          8 |      3,357 |          2 |         15 |      3,374 |
+| frontend/public                                                          |          2 |         25 |          0 |          1 |         26 |
+| frontend/src                                                             |          6 |        338 |         26 |         49 |        413 |
+| frontend/src (Files)                                                     |          4 |        336 |         26 |         48 |        410 |
+| frontend/src/assets                                                      |          2 |          2 |          0 |          1 |          3 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                 | language       | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/sonodamizuki/Desktop/github/tundoku/backend/database.py           | Python         |          9 |          4 |          4 |         17 |
+| /Users/sonodamizuki/Desktop/github/tundoku/backend/main.py               | Python         |         49 |          9 |         10 |         68 |
+| /Users/sonodamizuki/Desktop/github/tundoku/backend/models.py             | Python         |          9 |          0 |          1 |         10 |
+| /Users/sonodamizuki/Desktop/github/tundoku/database.py                   | Python         |          9 |          4 |          4 |         17 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/README.md            | Markdown       |          9 |          0 |          8 |         17 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/eslint.config.js     | JavaScript     |         28 |          0 |          2 |         30 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/index.html           | HTML           |         13 |          0 |          1 |         14 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/package-lock.json    | JSON           |      3,252 |          0 |          1 |      3,253 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/package.json         | JSON           |         33 |          0 |          1 |         34 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/postcss.config.js    | JavaScript     |          6 |          0 |          0 |          6 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/public/favicon.svg   | XML            |          1 |          0 |          0 |          1 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/public/icons.svg     | XML            |         24 |          0 |          1 |         25 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/App.css          | PostCSS        |        158 |          0 |         27 |        185 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/App.jsx          | JavaScript JSX |        168 |         26 |         19 |        213 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/assets/react.svg | XML            |          1 |          0 |          0 |          1 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/assets/vite.svg  | XML            |          1 |          0 |          1 |          2 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/index.css        | PostCSS        |          1 |          0 |          0 |          1 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/src/main.jsx         | JavaScript JSX |          9 |          0 |          2 |         11 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/tailwind.config.js   | JavaScript     |         11 |          1 |          0 |         12 |
+| /Users/sonodamizuki/Desktop/github/tundoku/frontend/vite.config.js       | JavaScript     |          5 |          1 |          2 |          8 |
+| /Users/sonodamizuki/Desktop/github/tundoku/main.py                       | Python         |         41 |          8 |          9 |         58 |
+| /Users/sonodamizuki/Desktop/github/tundoku/models.py                     | Python         |          9 |          0 |          1 |         10 |
+| Total                                                                    |                |      3,846 |         53 |         94 |      3,993 |
++--------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

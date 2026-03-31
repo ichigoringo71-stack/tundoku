@@ -1,0 +1,24 @@
+"filename", "language", "Python", "JavaScript JSX", "PostCSS", "JSON", "XML", "JavaScript", "Markdown", "HTML", "comment", "blank", "total"
+"/Users/sonodamizuki/Desktop/github/tundoku/backend/database.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 4, 17
+"/Users/sonodamizuki/Desktop/github/tundoku/backend/main.py", "Python", 49, 0, 0, 0, 0, 0, 0, 0, 9, 10, 68
+"/Users/sonodamizuki/Desktop/github/tundoku/backend/models.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"/Users/sonodamizuki/Desktop/github/tundoku/database.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 4, 17
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 9, 0, 0, 8, 17
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/eslint.config.js", "JavaScript", 0, 0, 0, 0, 0, 28, 0, 0, 0, 2, 30
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 13, 0, 1, 14
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/package-lock.json", "JSON", 0, 0, 0, 3252, 0, 0, 0, 0, 0, 1, 3253
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/package.json", "JSON", 0, 0, 0, 33, 0, 0, 0, 0, 0, 1, 34
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/postcss.config.js", "JavaScript", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/public/favicon.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/public/icons.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 0, 0, 1, 25
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/App.css", "PostCSS", 0, 0, 158, 0, 0, 0, 0, 0, 0, 27, 185
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/App.jsx", "JavaScript JSX", 0, 168, 0, 0, 0, 0, 0, 0, 26, 19, 213
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/assets/react.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/assets/vite.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 2
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/index.css", "PostCSS", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/src/main.jsx", "JavaScript JSX", 0, 9, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/tailwind.config.js", "JavaScript", 0, 0, 0, 0, 0, 11, 0, 0, 1, 0, 12
+"/Users/sonodamizuki/Desktop/github/tundoku/frontend/vite.config.js", "JavaScript", 0, 0, 0, 0, 0, 5, 0, 0, 1, 2, 8
+"/Users/sonodamizuki/Desktop/github/tundoku/main.py", "Python", 41, 0, 0, 0, 0, 0, 0, 0, 8, 9, 58
+"/Users/sonodamizuki/Desktop/github/tundoku/models.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"Total", "-", 126, 177, 159, 3285, 27, 50, 9, 13, 53, 94, 3993
