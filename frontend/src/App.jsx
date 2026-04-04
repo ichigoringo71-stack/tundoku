@@ -18,7 +18,7 @@ function App() {
   //1. python APIからデータを取得する関数
   const fetchBooks=async()=>{
     try{
-      const response=await axios.get('http://127.0.0.1:8000/books')
+      const response=await axios.get('https://tundoku-api.onrender.com/books')
       setBooks(response.data)
       setLoading(false)
     } catch(error){
@@ -33,7 +33,7 @@ function App() {
     
     try{
       //pythonのPOSTエンドポイントにデータを送る
-      await axios.post(`http://127.0.0.1:8000/books?title=${title}&reason=${reason}`)
+      await axios.post(`https://tundoku-api.onrender.com/books?title=${title}&reason=${reason}`)
 
       setTitle('')
       setReason('')
@@ -47,7 +47,7 @@ function App() {
   const handleDelete=async(id)=>{
     if(!window.confirm("この本をリストから削除しますか？")) return
     try{
-      await axios.delete(`http://127.0.0.1:8000/books/${id}`)
+      await axios.delete(`https://tundoku-api.onrender.com/books/${id}`)
 
       fetchBooks()
     } catch(error){
@@ -59,7 +59,7 @@ function App() {
   const handleUpdateStatus=async(id, newStatus)=>{
     try{
       //バックエンドの PATCH /books/{book_id} を叩く, クエリパラメータとして status を送る形式
-      await axios.patch(`http://127.0.0.1:8000/books/${id}?status=${newStatus}`)
+      await axios.patch(`https://tundoku-api.onrender.com/books/${id}?status=${newStatus}`)
 
       //更新に成功したらリストを再取得
       fetchBooks()
@@ -70,7 +70,7 @@ function App() {
 
   const handleUpdateReview=async(id)=>{
     try{
-      await axios.patch(`http://127.0.0.1:8000/books/${id}?review=${tempReview}`)
+      await axios.patch(`https://tundoku-api.onrender.com/books/${id}?review=${tempReview}`)
       setEditingReviewId(null)
       setTempReview('')
       fetchBooks()
