@@ -1,8 +1,0 @@
-# Gitを使い始める準備
-git init
-
-# 全ファイルをステージング（.gitignoreで指定したものは除外されます）
-git add .
-
-# 最初のセーブポイントを作成
-git commit -m "Initial commit: FastAPI basic setup with type hints"
