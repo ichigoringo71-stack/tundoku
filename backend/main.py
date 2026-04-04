@@ -66,3 +66,11 @@ def update_book(book_id: int, status: str=None, review: str=None, db: Session=De
     db.commit()
     db.refresh(db_book)
     return db_book
+
+# デプロイのため
+import os
+import uvicorn
+
+if __name__=="__main__":
+    port=int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

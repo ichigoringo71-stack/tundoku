@@ -6,3 +6,9 @@ git add .
 
 # 最初のセーブポイントを作成
 git commit -m "Initial commit: FastAPI basic setup with type hints"
+
+__pycache__/
+*.pyc
+*.db
+.venv/
+.DS_Store
