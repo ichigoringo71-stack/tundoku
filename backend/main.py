@@ -11,7 +11,8 @@ app=FastAPI()
 #React（5173番ポート）から Python（8000番ポート）へのアクセスを許可
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173",
+                   "https://tundoku-app.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
