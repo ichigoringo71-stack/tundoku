@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { BookOpen, Trash2, PlusCircle, MessageCircle, Check } from 'lucide-react'
+import { BookOpen, Trash2, PlusCircle, MessageCircle, Search, Check } from 'lucide-react'
 import './index.css'
 
 function App() {
@@ -14,6 +14,33 @@ function App() {
   const [tempReview, setTempReview]=useState('')
 
   const [filterStatus, setFilterStatus]=useState('all')
+
+  //検索用の状態
+  const [searchQuery, setSearchQuery]=useState('')
+  const [searchResults, setSearchResults]=useState([])
+  const [isSearching, setIsSearching]=useState(false)
+
+  //Google Books APIで検索する関数
+  const handleSearch=async()=>{
+    if(!searchQuery) return
+    setIsSearching(true)
+    try{
+      const res=await axios.get(`https://www.googleapis.com/books/v1/volumes?q=intitle:${searchQuery}`)
+      //上位五件を表示
+      setSearchResults(res.data.items || [])
+    }catch(err){
+      console.error("検索エラー:", err)
+    }finally{
+      setIsSearching(false)
+    }
+  }
+
+  //候補から本を選択した時の処理関数
+  const selectBook=(bookInfo)=>{
+    setTitle(bookInfo.title)
+    setSearchResults([])
+    setSearchQuery('')
+  }
 
   //1. python APIからデータを取得する関数
   const fetchBooks=async()=>{
@@ -98,8 +125,58 @@ function App() {
           <BookOpen className="text-blue-500" /> tundoku
         </h1>
       </header>
-
       <main className="max-w-2xl mx-auto space-y-4">
+        {/* ---検索セクション--- */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm mb-6 border border-blue-100">
+          <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+            <Search size={20} className="text-blue-500" /> 本を検索して入力
+          </h2>
+          <div className="mb-4">
+            <form onSubmit={(e)=>{
+              e.preventDefault();
+              handleSearch();
+            }}
+            className="flex gap-2 w-full"
+            >
+              <input
+                type="text"
+                placeholder="本の名前を入力..."
+                value={searchQuery}
+                onChange={(e)=>setSearchQuery(e.target.value)}
+                className="flex-1 p-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <button
+                onClick={handleSearch}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                {isSearching ? '検索中...' : '検索'}
+              </button>
+            </form>
+            
+          </div>
+        </div>
+
+        {/* ---検索結果の表示--- */}
+        {searchResults.length > 0 && (
+          <div className="space-y-2 border-t pt-4 max-h-60 overflow-y-auto">
+            {searchResults.map((item)=>(
+              <div
+                key={item.id}
+                onClick={()=>selectBook(item.volumeInfo)}
+                className="flex items-center gap-3 p-2 hover:bd-blue-50 cursor-pointer rounded-md transition"
+              >
+                {item.volumeInfo.imageLinks?.smallThumbnail && (
+                  <img src={item.volumeInfo.imageLinks.smallThumbnail} alt="cover" className="w-10 h-14 object-cover rounded shadow-sm" />
+                )}
+                <div>
+                  <p className="text-sm font-bold">{item.volumeInfo.title}</p>
+                  <p className="text-xs text-gray-500">{item.volumeInfo.authors?.join(', ')}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         {/* ---登録フォーム--- */}
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md mb-8 space-y-4">
           <h2 className="text-lg font-semibold flex items-center gap-2">
